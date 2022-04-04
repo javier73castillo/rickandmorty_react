@@ -1,0 +1,23 @@
+.container-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 80%;
+        .card {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 200px;
+            margin: 10px;
+            h1{
+                width: 100%;
+                font-size: 16px;
+                color: white;
+            }
+            img{
+                width: 100%;}
+        }
+}
