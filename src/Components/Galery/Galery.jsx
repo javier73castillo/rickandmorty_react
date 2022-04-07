@@ -1,19 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Galery.scss'
+import Header from '../Header/Header';
+import { useFetchContext } from '../../context/FetchContext';
 
 export const Galery = () => {
-    const [personajes, setPersonajes] = useState([])
-    const url= 'https://rickandmortyapi.com/api/character'
+    const {id, setId, personajes} = useFetchContext();
+
+    const siguiente = () => {
+        setId(id + 1)
+       
+    }
+    const previous = () =>{
+        setId(id -1)
+
+    }
    
-    useEffect(() => {
-        axios
-        .get(url)
-        .then((element) => {
-            setPersonajes(element.data.results);
-        })
-    },[]);
     return(
+            <>
+            <Header/>
             <div className='container-card'>
             { personajes && personajes.map(personaje => {
                  return (
@@ -25,6 +30,11 @@ export const Galery = () => {
             })
             }
             </div>
+            <div className='container-btn'>
+                <button onClick={()=>siguiente()}>Next Page</button>
+                <button onClick={()=>previous()}>Previous Page</button>
+            </div>
+            </>
     )};
     
  

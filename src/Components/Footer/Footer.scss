@@ -1,0 +1,22 @@
+.footer{
+    display: flex;
+    background-color: #242d30;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    align-items: center;
+    color: #e7e7e6;
+
+    a{
+        text-decoration: none;
+        padding-left: 20px;
+        margin-top: 15px;
+        color: #989898;
+        font-size: 18px;
+    }
+    a:hover{
+        color: #e7e7e6;
+    }
+}

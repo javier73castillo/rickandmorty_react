@@ -1,18 +1,20 @@
-import { useState } from 'react';
 import './App.scss';
+import Footer from './Components/Footer/Footer';
 import { Galery } from './Components/Galery/Galery';
-import Header from './Components/Header/Header';
+
+import FetchProvider from './context/FetchContext';
 
 function App() {
-  const [input, setInput] = useState('');
-  
-
 
   return (
     
     <div className="App">
-      <Header setInput={setInput}/>
-      <Galery />
+      <FetchProvider>
+          <Galery />
+          <Footer/>
+      </FetchProvider>
+
+
     </div>
   );
 }
